@@ -1,4 +1,5 @@
 import { FileText, Building2, Video } from "lucide-react";
+import { motion } from "framer-motion";
 import mediaImage from "@/assets/industry-media.jpg";
 import securityImage from "@/assets/industry-security.jpg";
 import socialImage from "@/assets/industry-social.jpg";
@@ -28,19 +29,29 @@ const Industries = () => {
   return (
     <section id="industries" className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Trusted Across Industries
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Organizations worldwide rely on our technology to protect against deepfakes and maintain content authenticity.
           </p>
-        </div>
+        </motion.div>
         
         <div className="grid md:grid-cols-3 gap-6">
           {industries.map((industry, index) => (
-            <div 
+            <motion.div 
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               className="relative rounded-2xl overflow-hidden h-80 group"
             >
               <img 
@@ -56,7 +67,7 @@ const Industries = () => {
                 <h3 className="text-xl font-semibold mb-2">{industry.title}</h3>
                 <p className="text-white/80 text-sm">{industry.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

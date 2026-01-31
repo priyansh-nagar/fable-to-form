@@ -1,4 +1,5 @@
 import { Bot, Zap, Lock, Clock, BarChart3, Globe } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -43,27 +44,37 @@ const Features = () => {
   return (
     <section id="features" className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Powerful Features for Complete Protection
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Everything you need to detect, analyze, and verify the authenticity of digital media content.
           </p>
-        </div>
+        </motion.div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="bg-card rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-border"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-card rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-border hover:-translate-y-1"
             >
               <div className={`w-14 h-14 rounded-xl ${feature.color} flex items-center justify-center mb-5`}>
                 <feature.icon className="h-7 w-7" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
               <p className="text-muted-foreground">{feature.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
