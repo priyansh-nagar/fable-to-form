@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Upload, ScanSearch, FileCheck, Download } from "lucide-react";
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -32,42 +33,62 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" className="py-20 px-4">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
             How It Works
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Simple, fast, and accurate deepfake detection in just four easy steps.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="relative">
-          {/* Connection line */}
-          <div className="hidden lg:block absolute top-16 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20"></div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="text-center relative">
-                <div className="relative inline-flex mb-6">
-                  <div className="w-20 h-20 rounded-full bg-purple-light flex items-center justify-center">
-                    <step.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
-                    {step.number}
-                  </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step, index) => (
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="text-center relative"
+            >
+              <div className="relative inline-flex mb-6">
+                <div className="w-20 h-20 rounded-full bg-purple-light flex items-center justify-center">
+                  <step.icon className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
+                  {step.number}
+                </div>
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
+              <p className="text-muted-foreground">{step.description}</p>
+            </motion.div>
+          ))}
         </div>
         
-        <div className="text-center mt-12">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-lg">
-            Try It Now - It's Free
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <Button 
+            asChild
+            size="lg" 
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
+          >
+            <a href="https://deep-trust.vercel.app/" target="_blank" rel="noopener noreferrer">
+              Try It Now - It's Free
+            </a>
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

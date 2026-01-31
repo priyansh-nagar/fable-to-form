@@ -1,8 +1,15 @@
 import { Shield } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="py-12 px-4 bg-foreground text-background">
+    <motion.footer 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="py-12 px-4 bg-foreground text-background"
+    >
       <div className="container mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -19,9 +26,9 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-background/70">
               <li><a href="#features" className="hover:text-background transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-background transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-background transition-colors">API</a></li>
-              <li><a href="#" className="hover:text-background transition-colors">Documentation</a></li>
+              <li><a href="https://deep-trust.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">Pricing</a></li>
+              <li><a href="https://deep-trust.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">API</a></li>
+              <li><a href="https://deep-trust.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">Documentation</a></li>
             </ul>
           </div>
           
@@ -46,10 +53,10 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-background/20 pt-8 text-center text-background/60">
-          <p>© 2026 DeepTrust. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} DeepTrust. All rights reserved.</p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
