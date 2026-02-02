@@ -40,7 +40,7 @@ const Industries = () => {
             Trusted Across Industries
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Organizations worldwide rely on our technology to protect against deepfakes and maintain content authenticity.
+            Leveraging AI-driven analysis to detect deepfake images and enhance content integrity.
           </p>
         </motion.div>
         
