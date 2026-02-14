@@ -25,7 +25,7 @@ const Header = () => {
             asChild
             className="bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
           >
-            <a href="https://deep-trust.vercel.app/">
+            <a href="https://deeptrust-sandy.vercel.app/">
               Get Started
             </a>
           </Button>
