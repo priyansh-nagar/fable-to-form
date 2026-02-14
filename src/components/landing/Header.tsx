@@ -10,7 +10,7 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="https://deeptrust-nine.vercel.app/" className="flex items-center gap-2">
+        <a href="https://deeptrust-sandy.vercel.app/" className="flex items-center gap-2">
           <img src="/logo.png" alt="DeepTrust" className="h-8 w-8" />
           <span className="text-xl font-bold text-foreground">DeepTrust</span>
         </a>
