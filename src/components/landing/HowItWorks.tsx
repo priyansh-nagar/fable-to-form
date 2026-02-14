@@ -84,7 +84,7 @@ const HowItWorks = () => {
             size="lg" 
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
           >
-            <a href="https://deep-trust.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <a href="https://deeptrust-sandy.vercel.app/" target="_blank" rel="noopener noreferrer">
               Try It Now - It's Free
             </a>
           </Button>
