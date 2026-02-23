@@ -48,7 +48,7 @@ const Hero = () => {
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
               >
-                <a href="https://deeptrust-sandy.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <a href="https://deeptrust-sandy.vercel.app/"  rel="noopener noreferrer">
                   Start Free Trial
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
